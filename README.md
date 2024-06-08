@@ -17,8 +17,44 @@ php artisan queue:work
 
 use shared postman collection
 
-make sure passed header
-Accept=application/json
+or make your new postman call 
+Header: Accept=application/json
+Method: POST
+Endpoint: http://127.0.0.1:8000/api/submit
+Body: like row json
+examples with validation:
+```json
+{
+    "name": "test"
+}
+```
+```json
+{
+    "name": "test",
+    "email": "test"
+}
+```
+```json
+{
+    "name": "test",
+    "email": "test@gmail.com"
+}
+```
+```json
+{
+    "name": "test",
+    "email": "test@gmail.com",
+    "message" : "text message"
+}
+```
+success example:
+```json
+{
+    "name": "test",
+    "email": "test@gmail.com",
+    "message" : "text message"
+}
+```
 
 See logged messaged for successful submission
 http://127.0.0.1:8000/log-viewer
