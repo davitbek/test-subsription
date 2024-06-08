@@ -12,7 +12,6 @@ class SubmitRequest extends FormRequest
             'name' => 'required|string|max:191',
             'email' => 'required|string|email|max:191',
             'message' => 'required|string|max:65535',
-
         ];
     }
 }

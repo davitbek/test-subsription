@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\SubmissionSaved;
+use App\Listeners\LogSubscriptionMessage;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,6 +20,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        SubmissionSaved::class => [
+            LogSubscriptionMessage::class
+        ]
     ];
 
     /**

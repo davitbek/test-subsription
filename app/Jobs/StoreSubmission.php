@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Events\SubmissionSaved;
 use App\Models\Submission;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -19,6 +20,7 @@ class StoreSubmission implements ShouldQueue
 
     public function handle(): void
     {
-        Submission::query()->create($this->data);
+        $Submission = Submission::query()->create($this->data);
+        event(new SubmissionSaved($Submission));
     }
 }
