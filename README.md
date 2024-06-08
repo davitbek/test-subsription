@@ -1,7 +1,17 @@
 ## Setup 
+git clone https://github.com/davitbek/test-subsription.git
+
+then go folder
+
+```
+cd test-subsription
+composer install
+```
+
 copy .env.example to env
 
 put .env
+```
 APP_URL=http://127.0.0.1:8000 #or your host domain
 
 DB_DATABASE=db_name
@@ -10,9 +20,9 @@ DB_PASSWORD=db_password
 
 QUEUE_CONNECTION=database
 
+```
 php artisan key:generate
-
-php artisan serve 
+php artisan serve
 php artisan queue:work
 
 use shared postman collection
